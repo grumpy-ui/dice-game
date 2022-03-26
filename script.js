@@ -14,6 +14,7 @@ const btnHold = document.querySelector('.btn--hold');
 const playerName0El = document.getElementById('name--0');
 const playerName1El = document.getElementById('name--1');
 
+alert('Cine pierde cumpara o bere');
 let player1 = prompt('Player 1 name:');
 let player2 = prompt('Player 2 name:');
 playerName0El.textContent = player1;
