@@ -14,7 +14,7 @@ const btnHold = document.querySelector('.btn--hold');
 const playerName0El = document.getElementById('name--0');
 const playerName1El = document.getElementById('name--1');
 
-alert('Cine pierde cumpara o bere');
+let punishment = prompt('Choose the punishment for the loser');
 let player1 = prompt('Player 1 name:');
 let player2 = prompt('Player 2 name:');
 playerName0El.textContent = player1;
@@ -69,9 +69,11 @@ btnHold.addEventListener('click', function () {
       if (activePlayer === 0) {
         playerName0El.textContent = '💅';
         playerName1El.textContent = '🤡';
+        alert(`${player2}` + ' ' + punishment);
       } else if (activePlayer === 1) {
         playerName0El.textContent = '🤡';
         playerName1El.textContent = '💅';
+        alert(`${player1}` + ' ' + punishment);
       }
       document
         .querySelector(`.player--${activePlayer}`)
