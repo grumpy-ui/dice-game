@@ -11,10 +11,15 @@ const diceEl = document.querySelector('.dice');
 const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
-const playerName0 = document.getElementById('name--0');
-const playerName1 = document.getElementById('name--1');
+const playerName0El = document.getElementById('name--0');
+const playerName1El = document.getElementById('name--1');
 
-console.log(playerName0.textContent);
+let player1 = prompt('Player 1 name:');
+let player2 = prompt('Player 2 name:');
+playerName0El.textContent = player1;
+playerName1El.textContent = player2;
+
+console.log(player1, player2);
 
 //Starting conditions
 score0El.textContent = 0;
@@ -61,11 +66,11 @@ btnHold.addEventListener('click', function () {
       playing = false;
       diceEl.classList.add('hidden');
       if (activePlayer === 0) {
-        playerName0.textContent = '💅';
-        playerName1.textContent = '🤡';
+        playerName0El.textContent = '💅';
+        playerName1El.textContent = '🤡';
       } else if (activePlayer === 1) {
-        playerName0.textContent = '🤡';
-        playerName1.textContent = '💅';
+        playerName0El.textContent = '🤡';
+        playerName1El.textContent = '💅';
       }
       document
         .querySelector(`.player--${activePlayer}`)
@@ -92,6 +97,6 @@ btnNew.addEventListener('click', function () {
   player1El.classList.remove('player--winner');
   player0El.classList.add('player--active');
   player1El.classList.remove('player--active');
-  playerName0.textContent = 'Player 1';
-  playerName1.textContent = 'Player 2';
+  playerName0El.textContent = player1;
+  playerName1El.textContent = player2;
 });
